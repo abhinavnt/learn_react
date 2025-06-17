@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-    <BallFollower/>
+    <Timer/>
     </>
   )
 }
