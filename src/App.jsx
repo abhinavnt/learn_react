@@ -22,8 +22,13 @@ import DisableButtonExample from './components/DisableButtonExample'
 import ToggleCheckbox from './components/ToggleCheckbox '
 import ResizeComponent from './components/practicals/ResizeComponent'
 import BallFollower from './components/practicals/BallFollower'
+import Parrent from './components/test/Parrent'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 const LazyComponent=React.lazy(()=>import('./components/LazyComponent'))
+
+
+
 
 
 function App() {
@@ -41,7 +46,14 @@ function App() {
 
   return (
     <>
-    <Timer/>
+    <BrowserRouter>
+    <Routes>
+
+     <Route path='/lazy' element={<Suspense fallback={<>loading..</>}><LazyComponent/></Suspense>}/>
+
+    </Routes>
+    
+    </BrowserRouter>
     </>
   )
 }
